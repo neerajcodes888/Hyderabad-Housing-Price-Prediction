@@ -10,9 +10,35 @@ model = joblib.load('Final Model')
 def home():
     return render_template("index.html")
 
+
+
+
+def price_prediction(bhk, property_age, property_size, totalfloors, facing, furnishing, locality, park, waterSupply, number_of_amenities):
+    X = np.zeros(len(x.columns))
+    X[0] = bhk
+    X[1] = property_age
+    X[2] = property_size
+    X[3] = totalfloors
+    X[97] = number_of_amenities
+    
+    columns = ['locality', 'facing', 'furnishing', 'parking', 'waterSupply']
+    values = [locality, facing, furnishing, park, waterSupply]
+    
+    for column, value in zip(columns, values):
+        if value in x.columns:
+            X[x.columns.get_loc(value)] = 1
+    
+    return X
+
 @app.route('/predict', methods=['GET', 'POST'])
 def predict():
     pass
+
+
+
+
+
+
 
 
 
