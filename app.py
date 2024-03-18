@@ -14,7 +14,7 @@ def home():
 
 
 def price_prediction(bhk, property_age, property_size, totalfloors, facing, furnishing, locality, park, waterSupply, number_of_amenities):
-    X = np.zeros(len(x.columns))
+    X = np.zeros(98)
     X[0] = bhk
     X[1] = property_age
     X[2] = property_size
