@@ -25,7 +25,7 @@ def price_prediction(bhk, property_age, property_size, totalfloors, facing, furn
     values = [locality, facing, furnishing, park, waterSupply]
     
     for column, value in zip(columns, values):
-        if value in x.columns:
+        if value in range(98):
             X[x.columns.get_loc(value)] = 1
     
     return X
