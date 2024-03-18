@@ -49,3 +49,65 @@
 
 {% comment %} 
             bhk, property_age, property_size, totalfloors, facing, furnishing, locality, park, waterSupply, number_of_amenities{% endcomment %}
+            <form action='/predict'  method='POST'>
+
+
+                <div class="mb-3">
+                    <label for="year" class="form-label"><b style="color: darkblue;">Which Year</b></label>
+                    <select class="form-select" id="year" name="year" required>
+                        <option value="" disabled selected>--Select a Year--</option>
+                    </select>
+                </div>
+                
+            
+                <script>
+                    document.addEventListener("DOMContentLoaded", function() {
+                        var selectElement = document.getElementById("year");
+                
+                        // Generate options for years from 1950 to 2050
+                        for (var year = 1950; year <= 2050; year++) {
+                            var option = document.createElement("option");
+                            option.text = year;
+                            option.value = year;
+                            selectElement.add(option);
+                        }
+                    });
+                </script>
+                
+            
+                <div class="mb-3">
+                    <label for="quarter" class="form-label"><b style="color: darkblue;">Which Quarter</b></label>
+                    <select class="form-select" id="quarter" name="quarter" aria-label="quarter" required>
+                        <option value="" disabled selected>-- Select Quarter --</option>
+                        <option value="q1">First Quarter</option>
+                        <option value="q2">Second Quarter</option>
+                        <option value="q3">Third Quarter</option>
+                        <option value="q4">Forth Quarter</option>
+                    </select>
+                </div>
+            
+                <div class="mb-3">
+                    <label for="gdp" class="form-label"><b style="color: darkblue;">GDP Growth</b></label>
+                    <input type="number" class="form-control" id="gdp" name="gdp" placeholder="Enter GDP Growth%" min="0" max="10" step="0.01" required>
+                </div>
+                
+            
+                <div class="mb-3">
+                    <label for="inflation" class="form-label"><b style="color: darkblue;">Inflation Rate</b></label>
+                    <input type="number" class="form-control" id="inflation" name="inflation" placeholder="Enter Inflation Rate%" min="0" max="20" step="0.01" required>
+                </div>
+            
+                <div class="mb-3">
+                    <label for="ip" class="form-label"><b style="color: darkblue;">Industrial Production</b></label>
+                    <input type="number" class="form-control" id="ip" name="ip" placeholder="Enter Industrial Production rate%" min="-5" max="5" step="0.01" required>
+                </div>
+            
+            
+                <div class="mb-3">
+                    <label for="job" class="form-label"><b style="color: darkblue;">Jobs in Market</b></label>
+                    <input type="number" class="form-control" id="job" name="job" placeholder="Enter jobs in market" min="10000" max="100000" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-floating animate__animated animate__bounce">Predict</button>
+            </form>
+            </body>
+            </html>
