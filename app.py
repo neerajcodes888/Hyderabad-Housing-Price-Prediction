@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template,request
 import joblib
 import numpy as np
 
@@ -32,7 +32,11 @@ def price_prediction(bhk, property_age, property_size, totalfloors, facing, furn
 
 @app.route('/predict', methods=['GET', 'POST'])
 def predict():
-    pass
+    if request.method == 'POST':
+        pass
+    else:
+        return render_template("prediction.html")
+        
 
 
 
