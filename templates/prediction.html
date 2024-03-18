@@ -53,27 +53,14 @@
 
 
                 <div class="mb-3">
-                    <label for="year" class="form-label"><b style="color: darkblue;">Which Year</b></label>
-                    <select class="form-select" id="year" name="year" required>
+                    <label for="bhk" class="form-label"><b style="color: darkblue;">Type of BHK</b></label>
+                    <select class="form-select" id="bhk" name="bhk" required>
                         <option value="" disabled selected>--Select a Year--</option>
                     </select>
                 </div>
                 
             
-                <script>
-                    document.addEventListener("DOMContentLoaded", function() {
-                        var selectElement = document.getElementById("year");
-                
-                        // Generate options for years from 1950 to 2050
-                        for (var year = 1950; year <= 2050; year++) {
-                            var option = document.createElement("option");
-                            option.text = year;
-                            option.value = year;
-                            selectElement.add(option);
-                        }
-                    });
-                </script>
-                
+            
             
                 <div class="mb-3">
                     <label for="quarter" class="form-label"><b style="color: darkblue;">Which Quarter</b></label>
